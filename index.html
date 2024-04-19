@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Start Button Quiz ........................................-->
+      <div class="start-btn" id="start-btn-js">
+        <button class="start">Start Quiz</button>
+      </div>
+
+      <!-- Info-box ................................................ -->
+      <div class="info-box" id="info-box-js">
+        <div class="info-title"><span>Important Rules of this Quiz</span></div>
+        <div class="info-list">
+          <div class="info">
+            1. You will have only <span>15 seconds</span> for each question to
+            be answered.
+          </div>
+          <div class="info">
+            2. Once you select your answer it is regarded as your final and
+            can't be undone.
+          </div>
+          <div class="info">
+            3. You can't select any option once the
+            <span>15 seconds</span> timer is over.
+          </div>
+          <div class="info">
+            4. You will get points on the basis of your selected correct
+            answers.
+          </div>
+          <div class="info">
+            5. Each selected correct answer earns you <span>10 points</span>.
+          </div>
+          <div class="info">
+            6. The green spot light means your turn to select a question from
+            the available questions.
+          </div>
+          <div class="info">
+            7. Each player must enter their name before starting the game.
+          </div>
+          <div class="info">
+            8. This quiz game has <span>20 questions</span>;
+            <span>10 questions</span> for each player.
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="quit" id="quit-js">Exit Quiz</button>
+          <button class="continue" id="continue-js">Contiune</button>
+        </div>
+      </div>
+
+      <!-- Question conatiner section ...............................-->
+      <div id="outter-container-js" class="outter-container">
+        <div class="container" id="container-js">
+          <header>
+            <div class="title">
+              <span class="title-span" id="top-span"
+                >T<span class="top-middle">O</span
+                ><span class="top-last">P</span></span
+              >
+              <p>Bible Quiz</p>
+            </div>
+            <p id="selected-question" class="selected-question"></p>
+            <div class="timer" id="timer-js">
+              <div class="time-left" id="time-left-js">Time Left</div>
+              <div class="timer-sec" id="timer-sec-js">15</div>
+            </div>
+            <div class="time-line" id="time-line-js"></div>
+          </header>
+          <div class="questions-list-container">
+            <div class="question">
+              <div class="up-questions">
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">1</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">2</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">3</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">4</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">5</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">6</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">7</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">8</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">9</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">10</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+              </div>
+              <div class="down-questions">
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">11</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">12</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">13</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">14</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">15</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">16</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">17</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">18</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">19</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+                <div class="quesbtn-resultcolor">
+                  <button class="button-quiz">20</button>
+                  <div class="result-color" id="result-color-js"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="display-container">
+            <div class="answer-display">
+              <h1 id="question-display" class="question-display"></h1>
+              <ol class="options-list" id="options-list" type="A"></ol>
+            </div>
+            <div id="timer"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Players info section ...................................  -->
+      <div class="players-info-container" id="players-info-container-js">
+        <div>
+          <h1 class="player01 active-player" id="player01-js">Player One</h1>
+          <div class="player01-display player-0">
+            <div>
+              <input
+                type="text"
+                class="name-input"
+                id="name01Input"
+                placeholder="Enter your name"
+              />
+              <button class="name-btn" onclick="display01Name()">Submit</button>
+            </div>
+            <div>
+              <h2 class="name">Name: <span id="player-1-name"></span></h2>
+              <h3 class="score">Score: <span id="point-0">0</span></h3>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 class="player02" id="player02-js">Player Two</h1>
+          <div class="player02-display player-1">
+            <div>
+              <input
+                type="text"
+                class="name-input"
+                id="name02Input"
+                placeholder="Enter your name"
+              />
+              <button class="name-btn" onclick="display02Name()">Submit</button>
+            </div>
+            <div>
+              <h2 class="name">Name: <span id="player-2-name"></span></h2>
+              <h3 class="score">Score: <span id="point-1">0</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="show-result-container" id="show-result-container-js">
+        <h1 class="game-over" id="game-over-js"></h1>
+        <p class="show-result" id="show-result-js"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+<img src="" alt="" height="" />
