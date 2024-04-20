@@ -202,52 +202,64 @@ questionButton.forEach(function (eachButton, index) {
   const option = questionBank[index].options; // a variable holding all the options as an array
   eachButton.addEventListener("click", function (e) {
     // assignig an eventlistener to each of the buttons to display the question
-    questionDisplay.textContent = eachQuestion; // to display question
-    eachButton.innerHTML = "<img src='icons/cancel-btn.png'  height='15px'>"; // to add cancel img on each button
-    eachButton.style.backgroundColor = "red"; // to make the cancel button for each question red
     const nameInputOne = display01Name();
     const nameInputTwo = display02Name();
-    if (activeName) {
-      selectedQuestion.textContent = `${nameInputOne} has selected question ${
-        index + 1
-      }`;
-      player01QesNum.push(index + 1);
-      console.log(player01QesNum, player02QesNum);
-      activeName--;
+    if (!nameInputOne && !nameInputTwo) {
+      alert("Enter your name");
     } else {
-      selectedQuestion.textContent = `${nameInputTwo} has selected question ${
-        index + 1
-      }`;
-      player02QesNum.push(index + 1);
-      console.log(player01QesNum, player02QesNum);
-      activeName++;
-    } // to display the number position of the question selected
-    optionList.classList.add("ol-active");
+      questionDisplay.textContent = eachQuestion; // to display question
+      eachButton.innerHTML = "<img src='icons/cancel-btn.png'  height='15px'>"; // to add cancel img on each button
+      eachButton.style.backgroundColor = "red"; // to make the cancel button for each question red
 
-    currentQuestion = index;
-    resetTimerAndContent();
-
+      if (activeName) {
+        selectedQuestion.textContent = `${nameInputOne} has selected question ${
+          index + 1
+        }`;
+        player01QesNum.push(index + 1);
+        console.log(player01QesNum, player02QesNum);
+        activeName--;
+      } else {
+        selectedQuestion.textContent = `${nameInputTwo} has selected question ${
+          index + 1
+        }`;
+        player02QesNum.push(index + 1);
+        console.log(player01QesNum, player02QesNum);
+        activeName++;
+      } // to display the number position of the question selected
+      optionList.classList.add("ol-active");
+      currentQuestion = index;
+    }
     // to display each option ...................
     optionList.innerHTML = ""; // to empty the ol element innerHTML content
-    option.forEach((eachOption, index) => {
-      const button = document.createElement("button"); // creating a new button element for each option
-      button.classList.add("btn-options"); // assigning a class to style the newly created button element
-      button.textContent = eachOption; // assigning each option to a button
 
-      optionList.appendChild(button); // displaying the options which are saved in the button element
+    if (nameInputOne && nameInputTwo) {
+      resetTimerAndContent();
+      option.forEach((eachOption, index) => {
+        const button = document.createElement("button"); // creating a new button element for each option
+        button.classList.add("btn-options"); // assigning a class to style the newly created button element
+        button.textContent = eachOption; // assigning each option to a button
 
-      button.addEventListener("click", (e) => {
-        checkAnswer(eachOption, button);
-        timerRestart();
-        for (i = 0; i < option.length; i++) {
-          optionList.children[i].setAttribute("disabled", true);
-        }
-      }); // assigning an eventlistener to each of the button and answer options
-    });
+        optionList.appendChild(button); // displaying the options which are saved in the button element
 
-    if (e.target.innerHTML === eachButton.innerHTML) {
+        button.addEventListener("click", (e) => {
+          checkAnswer(eachOption, button);
+          timerRestart();
+          for (i = 0; i < option.length; i++) {
+            optionList.children[i].setAttribute("disabled", true);
+          }
+        }); // assigning an eventlistener to each of the button and answer options
+      });
+    }
+
+    if (
+      e.target.innerHTML === eachButton.innerHTML &&
+      nameInputOne &&
+      nameInputTwo
+    ) {
       eachButton.disabled = true; // to disable each question button when selected
     }
+    console.log(e);
+    console.log(eachButton);
   });
 });
 
@@ -255,7 +267,9 @@ questionButton.forEach(function (eachButton, index) {
 function display01Name() {
   const nameInputOne = document.getElementById("name01Input").value;
   player01Name.textContent = nameInputOne;
-  player1El.textContent = nameInputOne;
+  if (nameInputOne) {
+    player1El.textContent = nameInputOne;
+  }
   console.log(player01Name.textContent);
   return player01Name.textContent; // Return the player name
 }
@@ -264,7 +278,9 @@ function display01Name() {
 function display02Name() {
   const nameInputTwo = document.getElementById("name02Input").value;
   player02Name.textContent = nameInputTwo;
-  player2El.textContent = nameInputTwo;
+  if (nameInputTwo) {
+    player2El.textContent = nameInputTwo;
+  }
   console.log(player02Name.textContent);
   return player02Name.textContent; // Return the player name
 }
